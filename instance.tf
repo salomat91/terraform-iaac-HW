@@ -7,10 +7,7 @@ resource "aws_instance" "web" {
   security_groups = ["allow_ssh"]
   user_data = file("userdata_file")
   
-  lyfecycle{
-    prevent_destroy = false
-  }
-
+  
   tags = { 
 
     Name = "HelloWorld${count.index +1}"
