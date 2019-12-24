@@ -8,7 +8,7 @@ resource "aws_instance" "web" {
   user_data = file("userdata_file")
   
   lyfecycle{
-    prevent_destroy = True 
+    prevent_destroy = false
   }
 
   tags = { 
