@@ -57,26 +57,26 @@ fi
 if [ -z "$S3BUCKETREGION" ] 
 then 
    echo "setenv: 's3_folder_region' variable not set in configuration file." 
-   return 1 
-fi 
-if [ -z "$S3BUCKETTYPE" ] 
-then 
+   return 1
+fi
+if [ -z "$S3BUCKETTYPE" ]
+then
    echo "setenv: 's3_folder_type' variable not set in configuration file." 
-   return 1 
-fi 
+   return 1
+fi
 if [ -z "$S3TFSTATEFILE" ] 
-then 
+then
    echo "setenv: 's3_tfstate_file' variable not set in configuration file." 
    echo "e.g. s3_tfstate_file=\"infrastructure.tfstate\"" 
-return 1 
-fi 
-cat << EOF > "$DIR/backend.tf" 
-terraform { 
-backend "s3" { 
-bucket = "${S3BUCKET}" 
-key = "${S3BUCKETPROJ}/${S3BUCKETREGION}/${S3BUCKETTYPE}/${ENVIRONMENT}/${S3TFSTATEFILE}" 
-region = "${S3BUCKETREGION}" 
-  } 
-} 
-EOF 
+return 1
+fi
+cat << EOF > "$DIR/backend.tf"
+terraform {
+backend "s3" {
+bucket = "${S3BUCKET}"
+key = "${S3BUCKETPROJ}/${S3BUCKETREGION}/${S3BUCKETTYPE}/${ENVIRONMENT}/${S3TFSTATEFILE}"
+region = "${S3BUCKETREGION}"
+  }
+}
+EOF
 cat backend.tf 
