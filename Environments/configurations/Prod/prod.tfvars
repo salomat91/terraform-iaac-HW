@@ -1,5 +1,5 @@
 environment = "prod" 
-s3_bucket = "backend-us-salomat"           #Will be used to set backend.tf 
+s3_bucket = "terraform-us-salomat"           #Will be used to set backend.tf 
 s3_folder_project = "application"          #Will be used to set backend.tf 
 s3_folder_region = "us-east-1"             #Will be used to set backend.tf 
 s3_folder_type = "state"                   #Will be used to set backend.tf 
