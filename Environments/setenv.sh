@@ -79,4 +79,5 @@ region = "${S3BUCKETREGION}"
   }
 }
 EOF
-cat backend.tf 
+cat backend.tf
+rm -rf .terraform.tfstate
