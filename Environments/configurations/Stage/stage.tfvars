@@ -9,6 +9,6 @@ s3_tfstate_file = "infrastructure.tfstate" #Will be used to set backend.tf
 
 
 
-ami                       = ""
-instance_type             = ""
-key_name                  = ""
+ami                       = "ami-00068cd7555f543d5"
+instance_type             = "t2.large"
+key_name                  = "MyMac"
