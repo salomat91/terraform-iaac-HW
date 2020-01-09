@@ -1,11 +1,11 @@
 data "aws_ami" "centos" {
     filter {
-        name   = "root-device-type"
+        name = "root-device-type"
         values = ["ebs"]
         }
 
     filter {
-        name = "centos"
+        name = "name"
         values = ["CentOS Linux 7 x86_64 HVM EBS *"]
         } 
 
@@ -52,7 +52,7 @@ resource "aws_instance" "tower" {
 
 resource "aws_route53_record" "www" {
     zone_id = "Z3YVBW0Q441HN"
-    name    = "tower.example.com"
+    name    = "tower"
     type    = "A"
     ttl     = "300"
     records = [aws_instance.web.public_ip]
