@@ -6,7 +6,7 @@ provider "aws" {
 
 data "aws_ami" "ubuntu" {
     filter {
-        name   = "nroot-device-type"
+        name   = "root-device-type"
         values = ["ebs"]
         }
 
