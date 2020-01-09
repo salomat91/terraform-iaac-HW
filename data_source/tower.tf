@@ -1,4 +1,4 @@
-data "aws_ami" "centos" {
+data "aws_ami" "centos1" {
     filter {
         name   = "root-device-type"
         values = ["ebs"]
