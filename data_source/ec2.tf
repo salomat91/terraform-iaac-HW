@@ -4,7 +4,7 @@ provider "aws" {
 
 
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "latest" {
     filter {
         name   = "name"
         values = ["CentOS Linux 7 x86_64 HVM EBS *"]
@@ -18,7 +18,7 @@ data "aws_ami" "ubuntu" {
 
 
 output "ami" {
-    value = "data.aws_ami.ubuntu.id" 
+    value = "data.aws_ami.latest.id" 
 } 
 
 
