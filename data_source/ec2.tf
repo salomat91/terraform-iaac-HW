@@ -4,27 +4,27 @@ provider "aws" {
 
 
 
-data "aws_ami" "centos1" {
+data "aws_ami" "ubuntu" {
     filter {
-        name   = "name"
+        name   = "nroot-device-type"
         values = ["ebs"]
         }
 
 
     most_recent = true 
-    owners = ["679593333241"] 
+    owners = ["099720109477"] 
 } 
 
 
 
 output "ami" {
-    value = data.aws_ami.centos1.id
+    value = data.aws_ami.ubuntu.id
 } 
 
 
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.centos1.id
+  ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 
   tags = {
