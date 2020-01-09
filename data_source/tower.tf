@@ -1,11 +1,11 @@
-data "aws_ami" "centos1" {
+data "aws_ami" "centos" {
     filter {
         name   = "root-device-type"
         values = ["ebs"]
         }
 
     filter {
-        name = "centos1"
+        name = "centos"
         values = ["CentOS Linux 7 x86_64 HVM EBS *"]
         } 
 
@@ -16,7 +16,7 @@ data "aws_ami" "centos1" {
 
 
 output "centos" {
-    value = data.aws_ami.centos1.id
+    value = data.aws_ami.centos.id
 } 
 
 
@@ -29,7 +29,7 @@ resource "aws_key_pair" "towerkey" {
 
 
 resource "aws_instance" "tower" {
-  ami           = data.aws_ami.centos1.id
+  ami           = data.aws_ami.centos.id
   instance_type = "t2.micro"
   key_name      = aws_key_pair.towerkey.key_name
   provisioner "remote-exec" {
