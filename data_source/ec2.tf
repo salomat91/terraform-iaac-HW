@@ -4,7 +4,13 @@ provider "aws" {
 
 
 
-data "aws_ami" "ubuntu" { 
+data "aws_ami" "ubuntu" {
+    filter {
+        name   = "name"
+        values = ["CentOS Linux 7 x86_64 HVM EBS *"]
+        }
+        
+         
     most_recent = true 
     owners = ["099720109477"] 
 } 
