@@ -8,5 +8,9 @@ variable "cidr" {
 
 variable "environment" {} 
 
+variable "azs1" {}
 
 
+variable "azs2" {}
+
+variable "azs3" {}
